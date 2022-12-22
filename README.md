@@ -1,1 +1,6 @@
-# ADM_HW_5
+# Homework 5 - The Marvel Universe!
+
+The purpose of this repository is to answer the assigned questions in the [Homework 5](https://github.com/lucamaiano/ADM/tree/master/2022/Homework_5) of the Algorithms for Data Mining course, 2022.
+
+1. `main.ipynb`: a Jupyter Notebook that answers the requested questions.
+2. `CommandLine.sh`: the code used to provide the answers to the Commmand Line questions.
