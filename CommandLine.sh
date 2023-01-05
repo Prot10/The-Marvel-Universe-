@@ -2,9 +2,11 @@
 
 # Question 1: What is the most popular pair of heroes (often appearing together in the comics)?
 echo "Most popular pair of heroes:"
-csvcut -c "hero1","hero2" hero-network.csv | awk -F, '$1 != $2' | sort | uniq -c | sort -nr | head -n 10
+cut -f 1,2 hero-network.csv | awk -F '","' '{if ($1 > $2) {print $2 "-" $1} \
+  else {print $1 "-" $2}}' | tr -d '"' > intermediate.csv
+cut -f 1,2 intermediate.csv | awk -F "-" '$1 != $2' | sort | uniq -c | sort -nr | head -n 10
 
-# Question 2: Number of comics per hero.
+#Question 2: Number of comics per hero.
 echo "Number of comics per hero:"
 csvcut -c "hero" edges.csv | sort | uniq -c | sort -nr | head -n 5
 
